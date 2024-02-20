@@ -22,8 +22,8 @@ config({
   app.use(cookieParser())
   
 app.use(cors({
-  // origin: [process.env.FRONTEND_URI],
-  origin : "https://nodejs-todo-app-82bv.onrender.com",
+  origin: [process.env.FRONTEND_URI],
+  // origin : "https://nodejs-todo-app-82bv.onrender.com",
   methods: ["GET","POST","PUT","DELETE"],
   credentials:true
 }))

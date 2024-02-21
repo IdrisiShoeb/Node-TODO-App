@@ -34,7 +34,8 @@ export const login = async (req,res,next)=>{
 
     // sendCookie(user, res , `Welcome ${user.name}`, 200)
     // } 
-    
+    const token = jwt.sign({_id: user._id } , process.env.JWT_SECRET)
+
     res.cookie("token", token,{
         expires: 36000000000,
         httpOnly:true,

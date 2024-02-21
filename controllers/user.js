@@ -40,7 +40,7 @@ export const login = async (req,res,next)=>{
         expires: 36000000000,
         httpOnly:true,
     })
-
+}
     catch (error) {
         next(error)
     }

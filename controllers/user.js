@@ -32,8 +32,15 @@ export const login = async (req,res,next)=>{
 
     if(!isMatch)return next(new HandleError("Invalid Email or Password",403))
 
-    sendCookie(user, res , `Welcome ${user.name}`, 200)
-    } catch (error) {
+    // sendCookie(user, res , `Welcome ${user.name}`, 200)
+    // } 
+    
+    res.cookie("token", token,{
+        expires: 36000000000,
+        httpOnly:true,
+    })
+
+    catch (error) {
         next(error)
     }
 
